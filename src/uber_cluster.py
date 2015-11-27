@@ -3,13 +3,13 @@ from sklearn.cluster import KMeans as km
 
 all_data = pickle.load(open("all_data.p", "rb"))
 
-t = 1
+t = 22
 lat_long = []
 for row in all_data[t]:
-	lat_long.append(float(row[2]),float(row[3])
+	lat_long.append([row[2], row[3]])
 
-for k in [500,1000,2000,3500,5000,6500,8000,10000,12500,15000]:
-	kmeans = km(k, init='k-means++')
+for k in [240]:
+	kmeans = km(k, max_iter=1000, n_init = 50,init = 'k-means++')
 	kmeans.fit(lat_long)
 	f = open('output_{t_val}_{k_val}.txt'.format(t_val = t, k_val = k),'w')
 	s = "k = {k_val}, inertia = {inertia_}\n".format(k_val = k, inertia_ = kmeans.inertia_)
