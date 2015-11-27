@@ -6,10 +6,10 @@ import pandas as pd
 all_data = pickle.load(open("all_data.p", "rb"))
 
 d = defaultdict(list)
-t = 2
+t = 0
 for row in all_data[t]:
-	d['lat'].append(float(row[2]))
-	d['long'].append(float(row[3]))
+	d['latitude'].append(float(row[2]))
+	d['longitude'].append(float(row[3]))
 
 df = pd.DataFrame(data=d)
 
@@ -18,14 +18,11 @@ import matplotlib.pyplot as plt
 
 pd.options.display.mpl_style = 'default' #Better Styling  
 new_style = {'grid': False} #Remove grid  
-matplotlib.rc('axes', **new_style)  
+matplotlib.rc('axes', **new_style)
 from matplotlib import rcParams  
 rcParams['figure.figsize'] = (17.5, 17) #Size of figure  
 rcParams['figure.dpi'] = 250
 
-P=df.plot(kind='scatter', x='long', y='lat',color='yellow',xlim=(-74.06,-73.77),ylim=(40.61, 40.91),s=.002,alpha=0.5)
+P=df.plot(kind='scatter', x='longitude', y='latitude',color='white',xlim=(-74.06,-73.77),ylim=(40.61, 40.91),s=.002,alpha=0.5)
 
 P.set_axis_bgcolor('black') #Background Color
-
-
-

@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import numpy as np
 from collections import defaultdict
 lat = kmeans.cluster_centers_[:,0]
 longitude = kmeans.cluster_centers_[:,1]
@@ -11,5 +12,5 @@ colors = np.random.rand(len(lat))
 area = np.pi * (15 *  np.array(new_density))**2
 plt.clf()
 plt.cla()
-plt.scatter(lat, longitude, s=area, c=colors, alpha=0.5)
+plt.scatter(longitude, lat, s=area, c=colors, alpha=0.5)
 plt.show()
