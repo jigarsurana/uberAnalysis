@@ -3,7 +3,7 @@ from sklearn.cluster import KMeans as km
 
 all_data = pickle.load(open("all_data.p", "rb"))
 
-t = 21
+t = 0
 lat_long = []
 for row in all_data[t]:
 	lat_long.append(row[2:])
