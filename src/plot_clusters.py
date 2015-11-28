@@ -3,7 +3,7 @@ from scipy import interpolate
 import numpy as np
 
 t = 1
-k = range(50,200,10)
+k = range(100,205,5)
 l_files = ['../outputs/output_{t_val}_{k_val}.txt'.format(t_val=t,k_val=i) for i in k]
 
 mse = []
