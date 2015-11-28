@@ -3,13 +3,14 @@ from sklearn.cluster import KMeans as km
 from collections import defaultdict
 import pandas as pd
 
-all_data = pickle.load(open("all_data.p", "rb"))
+all_data = pickle.load(open("../data/all_data_new.p", "rb"))
+
+t = 2
 
 d = defaultdict(list)
-t = 2
 for row in all_data[t]:
-	d['latitude'].append(float(row[2]))
-	d['longitude'].append(float(row[3]))
+	d['latitude'].append(float(row[3]))
+	d['longitude'].append(float(row[4]))
 
 df = pd.DataFrame(data=d)
 
