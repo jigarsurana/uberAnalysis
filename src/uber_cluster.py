@@ -1,7 +1,7 @@
 import cPickle as pickle
 from sklearn.cluster import KMeans as km
 
-all_data = pickle.load(open("all_data.p", "rb"))
+all_data = pickle.load(open("all_data_new.p", "rb"))
 
 t = 22
 lat_long = []
