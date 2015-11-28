@@ -1,10 +1,20 @@
 import matplotlib.pyplot as plt
 from scipy import interpolate
 import numpy as np
-k = [100,110,120,130,140,150,160,170,180,190,200,210,220,230,240,250,260,270,280,290,300]
-mse0 = [1.44571081735, 1.30787925119, 1.19062444356, 1.08535907104, 0.997998396545, 0.926048515136, 0.859654447514, 0.801099980158, 0.749560220806, 0.701722447169, 0.664201109819, 0.622343744535, 0.593450458772, 0.562669879443, 0.538287790607, 0.513160387984, 0.490836567135, 0.470624497428, 0.453469413712, 0.431012629776, 0.414157992453]
+
+t = 2
+k = range(70,150,5)
+l_files = ['../outputs/output_{t_val}_{k_val}.txt'.format(t_val=t,k_val=i) for i in k]
+
+mse = []
+
+for filename in l_files:
+	with open(filename, 'rb') as f:
+		s = f.read()
+		mse.append(float(s.split()[-1]))
+
 plt.clf()
-plt.plot(k,mse0,'-')
+plt.plot(k,mse,'-')
 plt.xlabel('cluster size K')
 plt.grid(True)
 plt.ylabel('MSE')
