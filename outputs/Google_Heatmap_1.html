@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Heatmaps</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+#floating-panel {
+  position: absolute;
+  top: 10px;
+  left: 25%;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+  text-align: center;
+  font-family: 'Roboto','sans-serif';
+  line-height: 30px;
+  padding-left: 10px;
+}
+#floating-panel {
+  background-color: #fff;
+  border: 1px solid #999;
+  left: 25%;
+  padding: 5px;
+  position: absolute;
+  top: 10px;
+  z-index: 5;
+}
+</style>
+</head>
+
+<body>
+<div id="floating-panel">
+<button onclick="toggleHeatmap()">Toggle Heatmap</button>
+<button onclick="changeGradient()">Change gradient</button>
+<button onclick="changeRadius()">Change radius</button>
+<button onclick="changeOpacity()">Change opacity</button>
+</div>
+<div id="map"></div>
+<script>
+
+var map, heatmap;
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 13,
+    center: {lat: 40.710516, lng: -73.942334},
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  });
+
+  heatmap = new google.maps.visualization.HeatmapLayer({
+    data: getPoints(),
+    map: map
+  });
+}
+
+function toggleHeatmap() {
+  heatmap.setMap(heatmap.getMap() ? null : map);
+}
+
+function changeGradient() {
+  var gradient = [
+    'rgba(0, 255, 255, 0)',
+    'rgba(0, 255, 255, 1)',
+    'rgba(0, 191, 255, 1)',
+    'rgba(0, 127, 255, 1)',
+    'rgba(0, 63, 255, 1)',
+    'rgba(0, 0, 255, 1)',
+    'rgba(0, 0, 223, 1)',
+    'rgba(0, 0, 191, 1)',
+    'rgba(0, 0, 159, 1)',
+    'rgba(0, 0, 127, 1)',
+    'rgba(63, 0, 91, 1)',
+    'rgba(127, 0, 63, 1)',
+    'rgba(191, 0, 31, 1)',
+    'rgba(255, 0, 0, 1)'
+  ]
+  heatmap.set('gradient', heatmap.get('gradient') ? null : gradient);
+}
+
+function changeRadius() {
+  heatmap.set('radius', heatmap.get('radius') ? null : 20);
+}
+
+function changeOpacity() {
+  heatmap.set('opacity', heatmap.get('opacity') ? null : 0.2);
+}
+
+function getPoints() {
+  return [
+new google.maps.LatLng(40.7205057859, -73.9879852104),
+new google.maps.LatLng(40.7592262662, -73.9704411072),
+new google.maps.LatLng(40.7079646943, -73.9371171598),
+new google.maps.LatLng(40.765375, -73.8782903846),
+new google.maps.LatLng(40.7496535109, -74.0016826877),
+new google.maps.LatLng(40.8262962264, -73.9066207547),
+new google.maps.LatLng(40.6893298246, -73.9520197995),
+new google.maps.LatLng(40.6787851064, -74.0079531915),
+new google.maps.LatLng(40.70908, -73.8012933333),
+new google.maps.LatLng(40.8079336957, -73.9426496377),
+new google.maps.LatLng(40.7157245211, -74.0100653257),
+new google.maps.LatLng(40.7132997866, -73.9629982924),
+new google.maps.LatLng(40.7313073499, -74.0005214286),
+new google.maps.LatLng(40.7782317215, -73.9518665377),
+new google.maps.LatLng(40.6437702703, -73.9650716216),
+new google.maps.LatLng(40.738624679, -74.0315610556),
+new google.maps.LatLng(40.7555320755, -73.9239271698),
+new google.maps.LatLng(40.6847938272, -73.9186104938),
+new google.maps.LatLng(40.7265406938, -73.9819969313),
+new google.maps.LatLng(40.7619580224, -73.9949677239),
+new google.maps.LatLng(40.7405844751, -74.0057164185),
+new google.maps.LatLng(40.6474122222, -74.0070633333),
+new google.maps.LatLng(40.838321875, -73.8393125),
+new google.maps.LatLng(40.6499872093, -73.786505814),
+new google.maps.LatLng(40.8266855422, -73.9471313253),
+new google.maps.LatLng(40.7273230769, -73.8677153846),
+new google.maps.LatLng(40.7853539379, -73.9769408115),
+new google.maps.LatLng(40.763005, -73.8320783333),
+new google.maps.LatLng(40.7426897651, -73.9925750839),
+new google.maps.LatLng(40.6338234043, -73.9338340426),
+new google.maps.LatLng(40.7209421847, -73.9569211368),
+new google.maps.LatLng(40.7201944756, -74.0027296237),
+new google.maps.LatLng(40.8882205128, -73.8487333333),
+new google.maps.LatLng(40.6796957944, -73.9835595794),
+new google.maps.LatLng(40.8032982394, -73.9621588028),
+new google.maps.LatLng(40.7640190476, -73.779852381),
+new google.maps.LatLng(40.6733277778, -73.8450611111),
+new google.maps.LatLng(40.7673005208, -73.9595497396),
+new google.maps.LatLng(40.7202927885, -74.0434072115),
+new google.maps.LatLng(40.7072364146, -74.0092614846),
+new google.maps.LatLng(40.7205502976, -73.9433145833),
+new google.maps.LatLng(40.6688270968, -73.9374819355),
+new google.maps.LatLng(40.8860333333, -73.9045566667),
+new google.maps.LatLng(40.8877125, -74.0312375),
+new google.maps.LatLng(40.6945734375, -73.9902029018),
+new google.maps.LatLng(40.7499690058, -73.9446929825),
+new google.maps.LatLng(40.7051625, -73.9233211207),
+new google.maps.LatLng(40.7555370833, -74.0296854167),
+new google.maps.LatLng(40.7649018894, -73.983936599),
+new google.maps.LatLng(40.7263852523, -73.9922635834),
+new google.maps.LatLng(40.7125438356, -73.950439589),
+new google.maps.LatLng(40.7368596413, -73.9561461883),
+new google.maps.LatLng(40.7321671853, -73.9884329562),
+new google.maps.LatLng(40.6862945824, -73.9688151242),
+new google.maps.LatLng(40.7520709585, -73.9874434907),
+new google.maps.LatLng(40.6987608696, -73.9055065217),
+new google.maps.LatLng(40.7407423414, -73.9830017505),
+new google.maps.LatLng(40.8630625, -73.8849),
+new google.maps.LatLng(40.6671036649, -73.9882623037),
+new google.maps.LatLng(40.7691446886, -73.9144516484),
+new google.maps.LatLng(40.655120339, -73.8956423729),
+new google.maps.LatLng(40.8575899281, -73.9336374101),
+new google.maps.LatLng(40.7479709836, -73.9766219672),
+new google.maps.LatLng(40.7300909283, -74.0073797468),
+new google.maps.LatLng(40.6226, -74.0245531915),
+new google.maps.LatLng(40.6948737342, -73.933306962),
+new google.maps.LatLng(40.7434326733, -73.8955584158),
+new google.maps.LatLng(40.7196560526, -73.9947040789),
+new google.maps.LatLng(40.7113137931, -73.8393103448),
+new google.maps.LatLng(40.674384696, -73.9564501048)
+
+];
+}
+
+</script>
+  <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDu4tAkj9-8cwEPTamK812YSbPnZ6xq9D8&signed_in=true&libraries=visualization&callback=initMap">
+  </script>
+</body>
+</html>
+
