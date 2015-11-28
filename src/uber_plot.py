@@ -6,7 +6,7 @@ import pandas as pd
 all_data = pickle.load(open("all_data.p", "rb"))
 
 d = defaultdict(list)
-t = 0
+t = 2
 for row in all_data[t]:
 	d['latitude'].append(float(row[2]))
 	d['longitude'].append(float(row[3]))
