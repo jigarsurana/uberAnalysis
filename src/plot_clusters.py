@@ -2,8 +2,8 @@ import matplotlib.pyplot as plt
 from scipy import interpolate
 import numpy as np
 
-t = 2
-k = range(70,150,5)
+t = 1
+k = range(100,205,5)
 l_files = ['../outputs/output_{t_val}_{k_val}.txt'.format(t_val=t,k_val=i) for i in k]
 
 mse = []
