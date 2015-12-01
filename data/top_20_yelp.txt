@@ -1,0 +1,30 @@
+Bam Cafe : 40.686467, -73.977654
+Iron horse NYC: 40.708196, -74.004969
+Stage karaoke lounge: 40.747866, -73.986689
+Feinstein’s/54 Below: 40.764475, -73.983639
+Pinks NYC: 40.728836, -73.984891
+Pocket Bar NYC: 40.763375, -73.992261
+The Village Underground: 40.730709, -74.000931
+Copper and Oak: 40.721055, -73.989740
+FeatherWeight: 40.706436, -73.943316
+Old Man Hustle: 40.716263, -73.989655
+Manhattan Brew & Vine: 40.801482, -73.961579
+Ampersand: 40.738737, -73.983523
+Anotheroom: 40.719806, -74.005550
+RARE View Rooftop Chelsea: 40.745530, -73.993773
+Casablanca Cocktail Lounge: 40.682564, -73.929281
+Set L.E.S: 40.719925, -73.988609
+The Grain: 40.738838, -73.990063
+Mosaic Craft Beer & Wine Bar: 40.774715, -73.918345
+48 Lounge: 40.759325, -73.982324
+Black Flamingo: 40.710430, -73.953926
+Ceilo NYC: 40.739758, -74.007012
+Le Bain at the Standard: 40.740970, -74.008093
+Output NYC: 40.722217, -73.957786
+Provocateur: 40.739904, -74.005854
+Santo's Party House: 40.717651, -74.001487
+Marquee: 40.750058, -74.002763
+Verboten: 40.722070, -73.959132
+Mehanata: 40.719485, -73.988917
+Lavo: 40.763007, -73.971298
+clover Club: 40.684593, -73.992126
